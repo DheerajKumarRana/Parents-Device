@@ -1,7 +1,7 @@
 "use client";
 import { useState } from "react";
 import { useRouter } from "next/navigation";
-import { signInWithEmailAndPassword } from "firebase/auth";
+import { signInWithEmailAndPassword, GoogleAuthProvider, signInWithPopup } from "firebase/auth";
 import { auth } from "@/lib/firebase";
 
 export default function Login() {
@@ -17,6 +17,16 @@ export default function Login() {
     const password = `${className}-${rollNumber}`;
     try {
       await signInWithEmailAndPassword(auth, email, password);
+      router.push("/");
+    } catch (error) {
+      setError(error.message);
+    }
+  };
+
+  const handleGoogleSignIn = async () => {
+    const provider = new GoogleAuthProvider();
+    try {
+      await signInWithPopup(auth, provider);
       router.push("/");
     } catch (error) {
       setError(error.message);
@@ -92,6 +102,22 @@ export default function Login() {
             </button>
           </div>
         </form>
+        <div className="relative">
+          <div className="absolute inset-0 flex items-center">
+            <div className="w-full border-t border-gray-300" />
+          </div>
+          <div className="relative flex justify-center text-sm">
+            <span className="px-2 text-gray-500 bg-white">Or continue with</span>
+          </div>
+        </div>
+        <div>
+          <button
+            onClick={handleGoogleSignIn}
+            className="flex justify-center w-full px-4 py-2 text-sm font-medium text-gray-700 bg-white border border-gray-300 rounded-md shadow-sm hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+          >
+            Sign in with Google
+          </button>
+        </div>
       </div>
     </div>
   );
