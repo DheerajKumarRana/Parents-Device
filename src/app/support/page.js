@@ -1,6 +1,6 @@
 "use client";
 import withAuth from "@/components/withAuth";
-import { Bell, User, LifeBuoy, LogOut, ChevronLeft, Phone, Mail, AlertTriangle } from 'lucide-react';
+import { Bell, User, LifeBuoy, LogOut, ChevronLeft, Phone, Mail, AlertTriangle } from "lucide-react";
 import { useRouter } from "next/navigation";
 import { auth } from "@/lib/firebase";
 

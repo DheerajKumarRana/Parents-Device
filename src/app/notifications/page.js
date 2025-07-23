@@ -4,7 +4,7 @@ import { useAuthState } from "react-firebase-hooks/auth";
 import { doc, getDoc, setDoc } from "firebase/firestore";
 import { auth, db } from "@/lib/firebase";
 import withAuth from "@/components/withAuth";
-import { Bell, User, LifeBuoy, LogOut, ChevronLeft } from 'lucide-react';
+import { Bell, User, LifeBuoy, LogOut, ChevronLeft } from "lucide-react";
 import { useRouter } from "next/navigation";
 
 function Notifications() {

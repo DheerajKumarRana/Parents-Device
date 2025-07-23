@@ -6,7 +6,7 @@ import { doc, getDoc } from "firebase/firestore";
 import { auth, db } from "@/lib/firebase";
 import withAuth from "@/components/withAuth";
 import dynamic from "next/dynamic";
-import { Bell, User, LifeBuoy, LogOut } from 'lucide-react';
+import { Bell, User, LifeBuoy, LogOut } from "lucide-react";
 
 const Map = dynamic(() => import("@/components/Map"), {
   ssr: false,

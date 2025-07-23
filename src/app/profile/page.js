@@ -11,7 +11,7 @@ import {
 } from "firebase/firestore";
 import { auth, db } from "@/lib/firebase";
 import withAuth from "@/components/withAuth";
-import { Bell, User, LifeBuoy, LogOut, ChevronLeft, Calendar, Clock, CheckCircle } from 'lucide-react';
+import { Bell, User, LifeBuoy, LogOut, ChevronLeft, Calendar, Clock, CheckCircle } from "lucide-react";
 import { useRouter } from "next/navigation";
 
 

@@ -3,7 +3,7 @@ import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { signInWithEmailAndPassword, GoogleAuthProvider, signInWithPopup } from "firebase/auth";
 import { auth } from "@/lib/firebase";
-import { Key, Mail, User, LogIn } from 'lucide-react';
+import { Key, Mail, User, LogIn } from "lucide-react";
 
 export default function Login() {
   const [email, setEmail] = useState("");
