@@ -5,6 +5,10 @@ import "leaflet-defaulticon-compatibility/dist/leaflet-defaulticon-compatibility
 import "leaflet-defaulticon-compatibility";
 
 const Map = ({ lat, lng, driverName }) => {
+  if (typeof window === "undefined") {
+    return null;
+  }
+
   return (
     <MapContainer center={[lat, lng]} zoom={13} scrollWheelZoom={false} style={{height: "400px", width: "100%"}}>
       <TileLayer
